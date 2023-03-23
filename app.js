@@ -56,7 +56,7 @@ function showPokemon(pokemon) {
 <li>Attack: ${pokemon.attack}</li>
 <li>Defense: ${pokemon.defense}</li>
 <li>Special Attack: ${pokemon.specialAttack}</li>
-<li>SPecial Defense: ${pokemon.specialDefense}</li>
+<li>Special Defense: ${pokemon.specialDefense}</li>
 <li>Speed: ${pokemon.speed}</li>
 <br>
     <div id="close_button">
