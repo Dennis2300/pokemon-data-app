@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    font-size: 1.5em;
+    background-color: aquamarine;
+}
+header {
+    font-size: 2.5em;
+    text-align: center;
+}
+section {
+    margin-top: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    line-height: 1.2em;
+    letter-spacing: 1px;
+}
+h1 {
+    font-size: 2.5em;
+}
+h2 {
+    text-align: left;
+}
+p {
+    border-style: solid;
+    text-align: center;
+}
+section {
+    background-color: white;
+    padding: 50px;
+    border-top-right-radius: 25%;
+    border-top-left-radius: 25%;
+}
+article {
+    text-align: center;
+}
+
+li {
+    text-align: left;
+}
