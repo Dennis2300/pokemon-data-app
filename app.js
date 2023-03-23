@@ -23,6 +23,7 @@ function openDetailView() {
 function closeDetailView() {
     console.log("close");
     document.querySelector("#detailedView").close()
+    document.querySelector("#open_button").addEventListener("click", openDetailView)
 }
 
 function showPokemon(pokemon) {
@@ -38,6 +39,7 @@ function showPokemon(pokemon) {
         <button>Detailed View</button>
     </div>
 <dialog id="detailedView">
+<h2>Zacian's Stats</h2>
 <li>Ability: ${pokemon.ability}</li>
 <li>Footprint: ${pokemon.footprint}</li>
 <li>DexIndex: #${pokemon.dexIndex}</li>
