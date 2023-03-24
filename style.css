@@ -1,113 +1,132 @@
 body {
-    margin: 20px;
-    margin-left: 100px;
-    margin-right: 100px;
-    font-size: 1.5em;
-    font-family:Arial, Helvetica, sans-serif;
-    background-image: url("https://rare-gallery.com/uploads/posts/4548246-pokmon-pixel-art.png");
-    background-size: auto 1200px;
-    background-repeat: no-repeat;
+  margin: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+  font-size: 1.5em;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("https://rare-gallery.com/uploads/posts/4548246-pokmon-pixel-art.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: black;
 }
 
 header {
-font-size: 2em;
-text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 4em;
+  text-align: center;
+  color: #0A285F;
+  font-family: 'Press Start 2P', cursive;
 }
 
 h1 {
-    text-align: center;
-    font-size: 2em;
-    margin: 0;
+  text-align: center;
+  font-size: 1.2em;
+  margin: 0;
+  font-family: 'VT323', monospace;
 }
 h2 {
-    margin: 0;
-}
-p{
-    border-style: solid;
-    letter-spacing: 1px;
-    padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 3em;
+  font-family: 'VT323', monospace;
 }
 #open_button {
-    text-align: center;
+  text-align: center;
 }
 #close_button {
-    text-align: center;
+  text-align: center;
 }
 button {
-    display: inline-block;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    letter-spacing: 1px;
-    padding: 15px 25px;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color:black;
-    background-color:bisque;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
+  display: inline-block;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  letter-spacing: 1px;
+  padding: 15px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: black;
+  background-color:#D5A100;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px grey;
+  font-family: 'VT323', monospace;
 }
-button:hover {background-color:tan}
+button:hover {
+  background-color:#D5A100;
+}
 
 button:active {
-  background-color: tan;
-  box-shadow: 0 5px #666;
+  background-color:#0075BE;
+  box-shadow: 0 5px grey;
   transform: translateY(4px);
 }
 dialog {
-    line-height: 1.75em;
+  line-height: 1.75em;
+  background-color: #FFCC00;
+  color:#0A285F;
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1em;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
 }
 
 @media (min-width: 480px) {
-    .grid-container {
-        grid-template-columns: 1fr 1fr;
-    }
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (min-width: 960px) {
-    .grid-container {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 @media (min-width: 1440px) {
-    .grid-container {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 @media (min-width: 1920px) {
-    .grid-container {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
 }
 
 .grid-container > article {
-    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
-    padding: 1.5em;
-    background-color: aqua;
-    border-style: solid;
-    border-radius: 15%;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
+  padding: 1.5em;
+  background-color: #FFCC00;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: #0075BE;
 }
 
 .grid-container > article:hover {
-    box-shadow: 0 8px 16px 0;
+  box-shadow: 0 8px 16px 0;
 }
 
 .grid-container img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .grid-container p {
-    margin: 0.3em 0;
-    font-size: 0.7em;
-    height: 175px;
+  margin: 0.3em 0;
+  font-family: 'VT323', monospace, bold;
+  padding: 10px;
+  font-size: 1em;
+  height: 275px;
+  letter-spacing: 1px;
+  line-height: 22px;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: #0075BE;
+  color: #0A285F;
 }
