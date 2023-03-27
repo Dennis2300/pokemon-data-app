@@ -18,9 +18,6 @@ async function initApp() {
     const Trevenant = await getPokemon(
         "https://raw.githubusercontent.com/JonLundby/data-aflevering/main/trevenant.json"
     )
-    const psyduck = await getPokemon(
-        "https://raw.githubusercontent.com/LauritsSchou/pokemon-database/main/psyduck.json"
-        )
     const slowbro = await getPokemon(
         "https://raw.githubusercontent.com/Elvasfar/Pokemon---dataapp/main/Slowbro.json"
         )
@@ -33,7 +30,6 @@ async function initApp() {
  showPokemon(porygon)
  showPokemon(abra)
  showPokemon(Trevenant)
- showPokemon(psyduck)
  showPokemon(slowbro)
  showPokemon(mewtwo)
 }
