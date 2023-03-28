@@ -3,41 +3,17 @@ window.addEventListener("load", initApp);
 
 async function initApp() {
     console.log("JS is running!");
-    const zacian = await getPokemon(
-        "https://raw.githubusercontent.com/Dennis2300/Zacian-pokemon-data/main/zacian.json"
-    );
-    const zamazenta = await getPokemon(
-        "https://raw.githubusercontent.com/Dennis2300/zamazenta-data/main/zamazenta.json"
-    );
-    const porygon = await getPokemon(
-        "https://raw.githubusercontent.com/JaDetGodtDu/Pokemon-Data-App/main/data/porygon.json"
-    )
-    const abra = await getPokemon(
-        "https://raw.githubusercontent.com/Jasper-Nielsen/pokemon-data/main/pokemon.JSON"
-    )
-    const Trevenant = await getPokemon(
-        "https://raw.githubusercontent.com/JonLundby/data-aflevering/main/trevenant.json"
-    )
-    const slowbro = await getPokemon(
-        "https://raw.githubusercontent.com/Elvasfar/Pokemon---dataapp/main/Slowbro.json"
-        )
-    const mewtwo = await getPokemon(
-        "https://raw.githubusercontent.com/Jaes98/PokemonDataApp_Marcus/main/mewtwo.json"
-    )
+const pokemons = await getPokemon();
 
- showPokemon(zacian);
- showPokemon(zamazenta)
- showPokemon(porygon)
- showPokemon(abra)
- showPokemon(Trevenant)
- showPokemon(slowbro)
- showPokemon(mewtwo)
+    pokemons.forEach(showPokemon)
 }
 
 
-async function getPokemon(url) {
-    const response = await fetch(url);
+async function getPokemon() {
+    const response = await fetch("https://cederdorff.github.io/dat-js/05-data/pokemons.json");
     const data = response.json();
+    console.log(data);
+    console.log("Data fetched");
     return data;
 }
 
