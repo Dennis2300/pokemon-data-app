@@ -1,26 +1,30 @@
 "use strict";
 window.addEventListener("load", initApp);
 
+//initApp calls getPokemon() upon start
 async function initApp() {
-    console.log("JS is running!");
-const pokemons = await getPokemon();
+  console.log("JS is running!");
+  const pokemons = await getPokemon();
 
-    //pokemons.forEach(showPokemon)
-    showPokemon(pokemons)
+  //pokemons.forEach(showPokemon)
+  showPokemon(pokemons);
 }
 
-
+//getPokemon() is fetching data from a JSON file
 async function getPokemon() {
-    const response = await fetch("https://raw.githubusercontent.com/Dennis2300/Zacian-pokemon-data/main/zacian.json");
-    const data = response.json();
-    console.log(data);
-    console.log("Data fetched");
-    return data;
+  const response = await fetch(
+    "https://raw.githubusercontent.com/Dennis2300/Zacian-pokemon-data/main/zacian.json"
+  );
+  const data = response.json();
+  console.log(data);
+  console.log("Data fetched");
+  return data;
 }
 
+//showPokemon() creates a HTML for each data object in the JSON file
 function showPokemon(pokemon) {
-    document.querySelector("#pokemons").insertAdjacentHTML(
-        "beforeend",
+  document.querySelector("#pokemons").insertAdjacentHTML(
+    "beforeend",
     /*html*/ `
     <article>
     
@@ -28,8 +32,8 @@ function showPokemon(pokemon) {
     <image src="${pokemon.image}"></image>
     </div>
     <h1>${pokemon.name}</h1>
-    <div id="pokedex2">#0${pokemon.dexindex}</div>
-    <div id="type2">Type: ${pokemon.type}</div>
+    <div id="pokedex_front">#0${pokemon.dexindex}</div>
+    <div id="type_front">Type: ${pokemon.type}</div>
     <dialog id = "pokemon-stats">
     <h2 id = "dialog-title">${pokemon.name}</h2>
     <p>${pokemon.description}</p>
@@ -61,30 +65,66 @@ function showPokemon(pokemon) {
             </form>
     </dialog>
     </article>
-`);
+`
+  );
 
-document.querySelector("#pokemons article:last-child").addEventListener("click", pokemonClicked)
-        function pokemonClicked() {
-            console.log(pokemon);
-            document.querySelector("#dialog-title").textContent = `${pokemon.name}`
-            document.querySelector("#ability").textContent = `Ability: ${pokemon.ability}`
-            document.querySelector("#footprint").textContent = `Footprint: ${pokemon.footprint}`
-            document.querySelector("#dexindex").textContent = `DexIndex: #0${pokemon.dexindex}`
-            document.querySelector("#type").textContent = `Type: ${pokemon.type}`
-            document.querySelector("#subtype").textContent = `Subtype: ${pokemon.subtype}`
-            document.querySelector("#weaknesses").textContent = `Weakness: ${pokemon.weaknesses}`
-            document.querySelector("#gender").textContent = `Gender: ${pokemon.gender}`
-            document.querySelector("#weight").textContent = `Weight: ${pokemon.weight} gram`
-            document.querySelector("#height").textContent = `Height: ${pokemon.height} meter`
-            document.querySelector("#generation").textContent = `Generation ${pokemon.generation}`
-            document.querySelector("#spilversion").textContent = `Spil: ${pokemon.spilversion}`
-            document.querySelector("#evolve").textContent = `Evolve: ${pokemon.canEvolve}`
-            document.querySelector("#health").textContent = `Health: ${pokemon.statsHP}`
-            document.querySelector("#attack").textContent = `Attack: ${pokemon.statsAttack}`
-            document.querySelector("#defence").textContent = `Defense: ${pokemon.statsDefence}`
-            document.querySelector("#specialAttack").textContent = `Special Attack: ${pokemon.statsSpecialAttack}`
-            document.querySelector("#specialDefence").textContent = `Special Defense: ${pokemon.statsSpecialDefence}`
-            document.querySelector("#speed").textContent = `Speed: ${pokemon.statsSpeed}`
-            document.querySelector("#pokemon-stats").showModal()
-        }
+  document
+    .querySelector("#pokemons article:last-child")
+    .addEventListener("click", pokemonClicked);
+  //pokemoneClicked() shows a detailed view when clicked on a specific pokemon
+  function pokemonClicked() {
+    console.log(pokemon);
+    document.querySelector("#dialog-title").textContent = `${pokemon.name}`;
+    document.querySelector(
+      "#ability"
+    ).textContent = `Ability: ${pokemon.ability}`;
+    document.querySelector(
+      "#footprint"
+    ).textContent = `Footprint: ${pokemon.footprint}`;
+    document.querySelector(
+      "#dexindex"
+    ).textContent = `DexIndex: #0${pokemon.dexindex}`;
+    document.querySelector("#type").textContent = `Type: ${pokemon.type}`;
+    document.querySelector(
+      "#subtype"
+    ).textContent = `Subtype: ${pokemon.subtype}`;
+    document.querySelector(
+      "#weaknesses"
+    ).textContent = `Weakness: ${pokemon.weaknesses}`;
+    document.querySelector("#gender").textContent = `Gender: ${pokemon.gender}`;
+    document.querySelector(
+      "#weight"
+    ).textContent = `Weight: ${pokemon.weight} gram`;
+    document.querySelector(
+      "#height"
+    ).textContent = `Height: ${pokemon.height} meter`;
+    document.querySelector(
+      "#generation"
+    ).textContent = `Generation ${pokemon.generation}`;
+    document.querySelector(
+      "#spilversion"
+    ).textContent = `Spil: ${pokemon.spilversion}`;
+    document.querySelector(
+      "#evolve"
+    ).textContent = `Evolve: ${pokemon.canEvolve}`;
+    document.querySelector(
+      "#health"
+    ).textContent = `Health: ${pokemon.statsHP}`;
+    document.querySelector(
+      "#attack"
+    ).textContent = `Attack: ${pokemon.statsAttack}`;
+    document.querySelector(
+      "#defence"
+    ).textContent = `Defense: ${pokemon.statsDefence}`;
+    document.querySelector(
+      "#specialAttack"
+    ).textContent = `Special Attack: ${pokemon.statsSpecialAttack}`;
+    document.querySelector(
+      "#specialDefence"
+    ).textContent = `Special Defense: ${pokemon.statsSpecialDefence}`;
+    document.querySelector(
+      "#speed"
+    ).textContent = `Speed: ${pokemon.statsSpeed}`;
+    document.querySelector("#pokemon-stats").showModal();
+  }
 }

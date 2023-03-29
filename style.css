@@ -1,28 +1,28 @@
+/*Body styling: background, margin, fonts, etc.*/
 body {
   position: relative;
   margin: 20px;
   margin-left: 100px;
   margin-right: 100px;
   font-size: 1.5em;
-  font-family: Arial, Helvetica, sans-serif;
   background-image: url("https://rare-gallery.com/uploads/posts/4548246-pokmon-pixel-art.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-color: black;
 }
-
+/*Simple header styling with some header images*/
 header {
   margin-top: 50px;
   margin-bottom: 50px;
   font-size: 4em;
   text-align: center;
-  color: #0A285F;
-  font-family: 'Oswald', sans-serif;
+  color: #0a285f;
+  font-family: "Oswald", sans-serif;
 }
 #header-img1 {
   position: absolute;
   scale: 39%;
-  transform: translate(30%, -200%);
+  transform: translate(30%, -200%) scaleX(-1);
 }
 #header-img2 {
   position: absolute;
@@ -34,88 +34,56 @@ header {
   scale: 20%;
   transform: translate(680%, -439%);
 }
+#header-img4 {
+  position: absolute;
+  scale: 45%;
+  transform: translate(-75%, -175%) scaleX(-1);
+}
 
+/*HTML headings (in this case is pokemon names) for both normal and detailed view*/
 h1 {
   text-align: center;
   font-size: 2em;
   margin-top: -25px;
   margin-bottom: 0;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 h2 {
   margin-top: 5px;
   margin-bottom: 20px;
   text-align: center;
   font-size: 3em;
-  font-family: 'VT323', monospace;
+  font-family: "VT323", monospace;
 }
 
-
-button {
-  display: inline-block;
-  letter-spacing: 1px;
-  margin-top: 10px;
-  padding: 15px 15px;
-  font-size: 24px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: black;
-  background-color:#D5A100;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px grey;
-  font-family: 'VT323', monospace;
-  width: 40%;
-}
-button:hover {
-  background-color:#D5A100;
+/*Padding for stats list in detailed view*/
+li {
+  padding-left: 50px;
 }
 
-button:active {
-  background-color:#0075BE;
-  box-shadow: 0 5px grey;
-  transform: translateY(4px);
-}
-dialog {
-  line-height: 2em;
-  line-height: 35px;
-  background-color: #FFCC00;
-  color:#0A285F;
-  border-radius: 50px;
-  max-height: 85%;
-  width: 50%;
-  font-family: 'VT323', monospace, bold;
-  
-}
-
-#open_button {
-  text-align: center;
-}
-#close_button {
-  text-align: center;
-}
-#pokedex2 {
+/*Quick stats in normal view*/
+#pokedex_front {
   text-align: center;
   margin: 2px;
   padding: 5px;
   background-color: white;
   border-radius: 10px;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
-#type2 {
+#type_front {
   text-align: center;
   letter-spacing: 1px;
   margin-top: 5px;
   margin-bottom: -20px;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
+/*Picture styling*/
 #picture {
   position: absolute;
   transform: translate(90%, 10%);
 }
 
+/*Grid container styling and some resizing functions*/
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -125,10 +93,10 @@ dialog {
   .grid-container {
     grid-template-columns: 1fr 1fr;
   }
-  #header-img1 {
-    opacity: 0%;
-  }
-  #header-img2 {
+  #header-img1,
+  #header-img2,
+  #header-img3,
+  #header-img4 {
     opacity: 0%;
   }
 }
@@ -137,7 +105,10 @@ dialog {
   .grid-container {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  #header-img1, #header-img2, #header-img3 {
+  #header-img1,
+  #header-img2,
+  #header-img3,
+  #header-img4 {
     opacity: 0%;
   }
 }
@@ -145,7 +116,10 @@ dialog {
   .grid-container {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-  #header-img1, #header-img2, #header-img3{
+  #header-img1,
+  #header-img2,
+  #header-img3,
+  #header-img4{
     opacity: 0%;
   }
 }
@@ -153,7 +127,10 @@ dialog {
   .grid-container {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
-  #header-img1, #header-img2, #header-img3 {
+  #header-img1,
+  #header-img2,
+  #header-img3, 
+  #header-img4{
     opacity: 100%;
   }
 }
@@ -161,33 +138,31 @@ dialog {
 .grid-container > article {
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
   padding: 1.5em;
-  background-color: #FFCC00;
-  border-color: #0075BE;
+  background-color: #ffcc00;
+  border-color: #0075be;
   border-style: solid;
   border-radius: 50px;
 }
 
 .grid-container > article:hover {
   box-shadow: 0 8px 16px 0;
--webkit-animation: float 3s linear infinite;
-        animation: float 3s linear infinite;
+  animation: float 3s linear infinite;
 }
 
 @keyframes float {
   0% {
-            transform: translateY(0px);
+    transform: translateY(0px);
     opacity: 1;
   }
   50% {
-            transform: translateY(-50px);
+    transform: translateY(-50px);
     opacity: 1;
   }
   100% {
-            transform: translateY(0px);
+    transform: translateY(0px);
     opacity: 1;
   }
 }
-
 
 .grid-container img {
   width: 100%;
@@ -197,13 +172,56 @@ dialog {
 
 .grid-container p {
   margin: 0.3em 0;
-  font-family: 'VT323', monospace, bold;
+  font-family: "VT323", monospace, bold;
   padding: 10px;
+  margin: 49px;
   font-size: 1em;
   letter-spacing: 1px;
   line-height: 22px;
   border-style: solid;
   border-radius: 20px;
-  border-color: #0075BE;
-  color: #0A285F;
+  border-color: #0075be;
+  color: #0a285f;
+}
+
+/*Dialog styling that shows detailed view*/
+dialog {
+  line-height: 2em;
+  line-height: 35px;
+  padding: 40px;
+  background-color: #ffcc00;
+  color: #0a285f;
+  border-radius: 50px;
+  max-height: 85%;
+  width: 50%;
+  font-family: "VT323", monospace, bold;
+}
+/*Button to close detailed view*/
+#close_button {
+  text-align: center;
+}
+button {
+  display: inline-block;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  padding: 15px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  background-color: #d5a100;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px grey;
+  font-family: "VT323", monospace;
+  width: 40%;
+}
+button:hover {
+  background-color: #d5a100;
+}
+
+button:active {
+  background-color: #0075be;
+  box-shadow: 0 5px grey;
+  transform: translateY(4px);
 }
