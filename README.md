@@ -4,5 +4,5 @@
 
 <font size = "5">
 
-[Pokemon Data App](https://dennis2300.github.io/pokemon-fetch/)
+**Nu må du gerne checke min data app** [here](https://dennis2300.github.io/pokemon-fetch/)!!
 </font>
