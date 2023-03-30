@@ -4,6 +4,6 @@
 
 <font size = "5">
 
-**Nu må du gerne checke min data app** [here](https://dennis2300.github.io/pokemon-fetch/)!!
+**Nu må du gerne checke min data app** [here](https://dennis2300.github.io/pokemon-data-app/)!!
 </font><br>
 **Det kan måske tage lidt tid at loade**
