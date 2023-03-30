@@ -77,10 +77,11 @@ li {
   margin-bottom: -20px;
   font-family: "Oswald", sans-serif;
 }
-/*Picture styling*/
-#picture {
+/*Image in detail view*/
+#detail-image {
   position: absolute;
-  transform: translate(90%, 10%);
+  scale: 35%;
+  transform: translate(80%, -65%);
 }
 
 /*Grid container styling and some resizing functions*/
@@ -119,7 +120,7 @@ li {
   #header-img1,
   #header-img2,
   #header-img3,
-  #header-img4{
+  #header-img4 {
     opacity: 0%;
   }
 }
@@ -129,8 +130,8 @@ li {
   }
   #header-img1,
   #header-img2,
-  #header-img3, 
-  #header-img4{
+  #header-img3,
+  #header-img4 {
     opacity: 100%;
   }
 }

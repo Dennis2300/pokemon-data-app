@@ -6,14 +6,13 @@ async function initApp() {
   console.log("JS is running!");
   const pokemons = await getPokemon();
 
-  //pokemons.forEach(showPokemon)
-  showPokemon(pokemons);
+  pokemons.forEach(showPokemon);
 }
 
 //getPokemon() is fetching data from a JSON file
 async function getPokemon() {
   const response = await fetch(
-    "https://raw.githubusercontent.com/Dennis2300/Zacian-pokemon-data/main/zacian.json"
+    "https://cederdorff.github.io/dat-js/05-data/pokemons.json"
   );
   const data = response.json();
   console.log(data);
@@ -28,25 +27,24 @@ function showPokemon(pokemon) {
     /*html*/ `
     <article>
     
-    <div id="picture2">
+    <div id="picture_front">
     <image src="${pokemon.image}"></image>
     </div>
     <h1>${pokemon.name}</h1>
     <div id="pokedex_front">#0${pokemon.dexindex}</div>
     <div id="type_front">Type: ${pokemon.type}</div>
+
     <dialog id = "pokemon-stats">
     <h2 id = "dialog-title">${pokemon.name}</h2>
     <p>${pokemon.description}</p>
-        <div id="picture">
-            <image src="${pokemon.image}"></image>
-        </div>
+    <image id = "detail-image" src = "${pokemon.image}"></image>
     <div id="list">
         <li id = "ability">${pokemon.ability}</li>
-        <li id = "footprint">${pokemon.footprint}</li>
+        <!--<li><image id = "footprint" src = "${pokemon.footprint}"></image></li>-->
+        <li id = "weaknesses">${pokemon.weaknesses}</li>
         <li id = "dexindex">${pokemon.dexindex}</li>
         <li id = "type">${pokemon.type}</li>
         <li id = "subtype">${pokemon.subtype}</li>
-        <li id = "weaknesses">${pokemon.weaknesses}</li>
         <li id = "gender">${pokemon.gender}</li>
         <li id = "weight">${pokemon.weight}</li>
         <li id = "height">${pokemon.height}</li>
@@ -73,14 +71,12 @@ function showPokemon(pokemon) {
     .addEventListener("click", pokemonClicked);
   //pokemoneClicked() shows a detailed view when clicked on a specific pokemon
   function pokemonClicked() {
-    console.log(pokemon);
     document.querySelector("#dialog-title").textContent = `${pokemon.name}`;
+    document.querySelector("#detail-image").src = pokemon.image;
     document.querySelector(
       "#ability"
     ).textContent = `Ability: ${pokemon.ability}`;
-    document.querySelector(
-      "#footprint"
-    ).textContent = `Footprint: ${pokemon.footprint}`;
+    //document.querySelector("#footprint").src = pokemon.footprint;
     document.querySelector(
       "#dexindex"
     ).textContent = `DexIndex: #0${pokemon.dexindex}`;
